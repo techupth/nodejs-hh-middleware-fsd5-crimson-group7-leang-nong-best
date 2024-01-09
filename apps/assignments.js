@@ -1,5 +1,5 @@
 import { Router } from "express";
-
+import  validateAssignmentData  from "../apps/assignments.validation.js";
 import { assignments as assignmentsFromFile } from "../data/assignments.js";
 import { comments as commentsFromFile } from "../data/comments.js";
 
@@ -20,7 +20,7 @@ assignmentRouter.get("/:id", (req, res) => {
 
   if (!hasFound) {
     return res.status(404).json({
-      messsage: `Assignment ${assignmentId} not found`,
+      message: `Assignment ${assignmentId} not found`,
     });
   }
 
@@ -31,7 +31,7 @@ assignmentRouter.get("/:id", (req, res) => {
   });
 });
 
-assignmentRouter.post("/", (req, res) => {
+assignmentRouter.post("/", validateAssignmentData, (req, res) => {
   const newAssignment = req.body;
   const newAssignmentId = assignments[assignments.length - 1].id + 1;
 
@@ -53,7 +53,7 @@ assignmentRouter.put("/:id", (req, res) => {
 
   if (!hasFound) {
     return res.status(404).json({
-      messsage: `Assignment ${assignmentId} not found`,
+      message: `Assignment ${assignmentId} not found`,
     });
   }
 
@@ -78,7 +78,7 @@ assignmentRouter.delete("/:id", (req, res) => {
 
   if (!hasFound) {
     return res.status(404).json({
-      messsage: `Assignment ${assignmentId} not found`,
+      message: `Assignment ${assignmentId} not found`,
     });
   }
 
