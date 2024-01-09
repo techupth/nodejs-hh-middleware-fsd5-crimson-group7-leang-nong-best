@@ -1,0 +1,9 @@
+
+IP: ::1, Method: GET, Endpoint: /assignmets/2
+IP: ::1, Method: GET, Endpoint: /assignmets/2
+IP: ::1, Method: GET, Endpoint: /assignmets/1
+IP: ::1, Method: GET, Endpoint: /assignmets
+IP: ::1, Method: GET, Endpoint: /assignmets
+IP: ::1, Method: GET, Endpoint: /assignmets
+IP: ::1, Method: GET, Endpoint: /assignmets
+IP: ::1, Method: GET, Endpoint: /assignmets
